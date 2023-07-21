@@ -4,8 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HttpClientModule} from '@angular/common/http';
+import { CoreModule } from './core/core.module';
+import { ShopModule } from './shop/shop.module';
 
 
 
@@ -13,13 +14,15 @@ import { HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    NavBarComponent
+    
   ],
   imports: [
     BrowserModule,
+    CoreModule,
     NgbModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    ShopModule
     
 
     
