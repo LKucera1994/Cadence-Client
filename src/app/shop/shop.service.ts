@@ -13,11 +13,12 @@ export class ShopService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getProductsFromAPI(brandId?:number,typeId?:number){
+  getProductsFromAPI(brandId?:number, typeId?:number, sortOrder?:string){
     let params = new HttpParams()
 
     if(brandId) params= params.append("brandId",brandId);
     if(typeId) params = params.append("typeId",typeId);
+    if(sortOrder) params = params.append("sortOrder",sortOrder);
 
     return this.httpClient.get<Pagination<Product[]>>(this.baseUrl + "Products", {params:params} );
   }
