@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HttpClientModule} from '@angular/common/http';
 import { CoreModule } from './core/core.module';
-import { ShopModule } from './shop/shop.module';
+
 import { AppRoutingModule } from './app-routing.module';
 import { HomeModule } from './home/home.module';
 
@@ -24,7 +24,7 @@ import { HomeModule } from './home/home.module';
     NgbModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ShopModule,
+    
     AppRoutingModule,
     HomeModule    
   ],
