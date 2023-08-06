@@ -15,6 +15,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { ToastrModule } from 'ngx-toastr';
   ],
   imports: [
     BrowserModule,
-    CoreModule,
+    CoreModule,   
     NgbModule,
     BrowserAnimationsModule,
     HttpClientModule,

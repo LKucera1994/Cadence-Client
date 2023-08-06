@@ -15,7 +15,7 @@
     text-decoration: none;
     color: #343a40;
     &.active {
-        color: #18326b;
+        color: orange;
         
     }
 }
