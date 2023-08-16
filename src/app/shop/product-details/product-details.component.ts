@@ -14,7 +14,11 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(private shopService: ShopService,
     private activatedRoute: ActivatedRoute,
-    private breadcrumbService: BreadcrumbService) {}
+    private breadcrumbService: BreadcrumbService) {
+
+      //workaround to avoid the displaying of the productId when switching between productDetails
+      this.breadcrumbService.set("@productDetails"," ")
+    }
 
   ngOnInit(): void {
     this.loadProduct();

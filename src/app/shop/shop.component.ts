@@ -10,6 +10,8 @@ import { ShopParams } from '../shared/models/shopParams';
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
+
+//sorting
 export class ShopComponent implements OnInit {
   @ViewChild("search") searchTerm?: ElementRef 
   products: Product[] = [];
