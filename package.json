@@ -26,6 +26,7 @@
     "@popperjs/core": "^2.10.2",
     "bootstrap": "^5.2.0",
     "bootswatch": "^5.3.1",
+    "cuid": "^3.0.0",
     "font-awesome": "^4.7.0",
     "jest-editor-support": "*",
     "ngx-bootstrap": "^9.0.0",

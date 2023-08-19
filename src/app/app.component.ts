@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { BasketService } from './basket/basket.service';
 
 
 @Component({
@@ -11,9 +12,12 @@ export class AppComponent implements OnInit {
   title = 'Cadence';
   
 
-  constructor(){}
+  constructor(private basketService: BasketService){}
 
   ngOnInit(): void {
+    const basketId = localStorage.getItem("basket_id");
+    if(basketId)
+        this.basketService.getBasket(basketId);
     
 
 }}
