@@ -3,6 +3,8 @@ import { ShopService } from '../shop.service';
 import { Product } from 'src/app/shared/models/product';
 import { ActivatedRoute } from '@angular/router';
 import { BreadcrumbService } from 'xng-breadcrumb';
+import { BasketService } from 'src/app/basket/basket.service';
+import { take } from 'rxjs';
 
 @Component({
   selector: 'app-product-details',
@@ -10,11 +12,14 @@ import { BreadcrumbService } from 'xng-breadcrumb';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  product?: Product
+  product?: Product;
+  quantity = 1; 
+  quantityInBasket = 0;
 
   constructor(private shopService: ShopService,
     private activatedRoute: ActivatedRoute,
-    private breadcrumbService: BreadcrumbService) {
+    private breadcrumbService: BreadcrumbService,
+    private basketService: BasketService) {
 
       //workaround to avoid the displaying of the productId when switching between productDetails
       this.breadcrumbService.set("@productDetails"," ")
@@ -31,7 +36,18 @@ export class ProductDetailsComponent implements OnInit {
       this.shopService.getProduct(+id).subscribe({
         next:product => {
           this.product = product;
-          this.breadcrumbService.set('@productDetails',product.name)
+          this.breadcrumbService.set('@productDetails',product.name);
+          //only check the basketService once
+          this.basketService.basketSource$.pipe(take(1)).subscribe({
+            next: basket => {
+              const item = basket?.items.find(x=> x.id === +id);
+              if(item){
+                // need 2 quantity values for updating correctly
+                this.quantity = item.quantity;
+                this.quantityInBasket = item.quantity;
+              }
+            }
+          })
         },
         error: error=> console.log(error)
         
@@ -40,5 +56,38 @@ export class ProductDetailsComponent implements OnInit {
     }
       
   }
+
+  incrementQuantity(){
+    this.quantity++;
+  }
+
+  decrementQuantity(){
+    if(this.quantity>0)
+    this.quantity--
+  }
+
+  updateBasket(){
+    if(this.product)
+    {
+      if(this.quantity > this.quantityInBasket){
+        const itemsToAdd = this.quantity - this.quantityInBasket;
+        this.quantityInBasket += itemsToAdd;
+
+        this.basketService.addItemToBasket(this.product, itemsToAdd);
+
+      }
+      else{
+        const itemsToRemove = this.quantityInBasket - this.quantity;
+        this.quantityInBasket -= itemsToRemove;
+        this.basketService.removeItemFromBasket(this.product.id, itemsToRemove);
+
+       }
+    }
+  }
+
+  get buttonText(){
+    return this.quantityInBasket === 0 ? "Add to basket" : "Update basket";
+  }
+
 
 }
