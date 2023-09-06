@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/accout/account.service';
 import { BasketService } from 'src/app/basket/basket.service';
 import { BasketItem } from 'src/app/shared/models/basket';
 
@@ -9,7 +10,7 @@ import { BasketItem } from 'src/app/shared/models/basket';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(public basketService: BasketService) { }
+  constructor(public basketService: BasketService, public accountService: AccountService) { }
 
   getCount(items: BasketItem[]){
     //calculate total item count
