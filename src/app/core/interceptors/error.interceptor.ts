@@ -19,13 +19,17 @@ export class ErrorInterceptor implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         if(error){
+          if(error.status === 400){
+            if(error.error.errors){
+              throw error.error;
+            }
+            else{
+              this.toastr.error(error.error.message,error.status.toString());
+            }
 
-          if(error.error.errors){
-            throw error.error;
           }
-          else{
-            this.toastr.error(error.error.message,error.status.toString());
-          }
+
+          
 
           if(error.status===401)
           {
@@ -43,6 +47,8 @@ export class ErrorInterceptor implements HttpInterceptor {
             this.router.navigateByUrl("/server-error",navigationExtras);
 
           }
+
+         
 
         }
 
