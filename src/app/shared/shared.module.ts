@@ -9,12 +9,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TextInputComponent } from './components/text-input/text-input.component';
 
+
+
+
+
+
 @NgModule({
   declarations: [
     PaginHeaderComponent,
     PagerComponent,
     OrderTotalsComponent,
-    TextInputComponent,
+    TextInputComponent
+    
+    
     
   ],
   imports: [
@@ -23,7 +30,9 @@ import { TextInputComponent } from './components/text-input/text-input.component
     PaginationModule.forRoot(),
     CarouselModule.forRoot(),
     ReactiveFormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    
+    
 
   ],
   exports: [
@@ -33,7 +42,9 @@ import { TextInputComponent } from './components/text-input/text-input.component
     CarouselModule,
     OrderTotalsComponent,
     ReactiveFormsModule,
-    BsDropdownModule
+    BsDropdownModule,
+    TextInputComponent
+    
 
   ]
 })
