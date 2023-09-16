@@ -42,12 +42,9 @@ export class RegisterComponent {
           return this.accountService.checkEmailExists(control.value).pipe(
             map(result => result ? {emailExists:true} : null),
             finalize(() => control.markAllAsTouched())
-          )
-          
+          )         
         })
-
-      )
-      
+      )     
       
     }
   }
