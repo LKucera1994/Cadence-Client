@@ -12,6 +12,6 @@ export interface AppUser{
     street: string ;
     city: string ;
     state: string ;
-    zipCode: string ;
+    zipcode: string ;
     
 }
