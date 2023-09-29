@@ -6,7 +6,7 @@ export interface User{
 
 export interface AppUser{
    
-    displayName: string;
+    displayName?: string;
     firstName: string ;
     lastName: string ;
     street: string ;
