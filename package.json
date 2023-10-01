@@ -25,6 +25,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
+    "@stripe/stripe-js": "^2.1.6",
     "bootstrap": "^5.2.0",
     "bootswatch": "^5.3.1",
     "cuid": "^3.0.0",
