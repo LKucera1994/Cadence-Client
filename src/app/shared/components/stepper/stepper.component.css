@@ -4,3 +4,8 @@ button.nav-link{
     border: none;
     color: #18326b;
 }
+
+&:disabled:not(.active){
+    color: #18326b;
+    background: #e9ecef;
+}
