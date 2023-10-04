@@ -24,9 +24,11 @@ export class ShopComponent implements OnInit {
   ];
 
   totalCount = 0;
-  shopParams = new ShopParams();
+  shopParams: ShopParams
 
-  constructor(private shopService: ShopService) { }
+  constructor(private shopService: ShopService) {
+    this.shopParams = shopService.getShopParams();
+   }
 
   ngOnInit(): void {
 
@@ -37,11 +39,9 @@ export class ShopComponent implements OnInit {
   }
 
   getProducts(){
-    this.shopService.getProductsFromAPI(this.shopParams).subscribe({
+    this.shopService.getProductsFromAPI().subscribe({
       next: response => {
-        this.products =response.data;
-        this.shopParams.pageNumber = response.pageIndex;
-        this.shopParams.pageSize = response.pageSize;
+        this.products = response.data;
         this.totalCount = response.count;
       }, 
       error: error => console.log(error)
@@ -61,33 +61,48 @@ export class ShopComponent implements OnInit {
   }
 
   onBrandSelected(brandId: number){
-    this.shopParams.brandId = brandId;
-    this.shopParams.pageNumber =1;
+    const params = this.shopService.getShopParams();
+    params.brandId = brandId;
+    params.pageNumber =1;
+    this.shopService.setShopParams(params);
+    this.shopParams = params;
     this.getProducts();
   }
 
   onTypeSelected(typeId:number){
-    this.shopParams.typeId = typeId;
-    this.shopParams.pageNumber =1;
+    const params = this.shopService.getShopParams();
+    params.typeId = typeId;
+    params.pageNumber =1;
+    this.shopService.setShopParams(params);
+    this.shopParams = params;
     this.getProducts();
   }
 
   onSortOrderSelected(event:any){
-    this.shopParams.sortOrder = event.target.value;
+    const params = this.shopService.getShopParams();
+    params.sortOrder = event.target.value;
+    this.shopService.setShopParams(params);
+    this.shopParams = params;
     this.getProducts();
   }
 
   onPageChanged(event:any){
+    const params = this.shopService.getShopParams();
     //if the pagenumber is not equal the event page we are updating the page
-    if(this.shopParams.pageNumber !== event) {
-      this.shopParams.pageNumber = event;
+    if(params.pageNumber !== event) {
+      params.pageNumber = event;
+      this.shopService.setShopParams(params);
+      this.shopParams = params;
       this.getProducts();
     }
   }
 
   onSearch(){
-    this.shopParams.search = this.searchTerm?.nativeElement.value;
-    this.shopParams.pageNumber =1;
+    const params = this.shopService.getShopParams();
+    params.search = this.searchTerm?.nativeElement.value;
+    params.pageNumber =1;
+    this.shopService.setShopParams(params);
+    this.shopParams = params;
     this.getProducts();
 
   }
@@ -95,6 +110,7 @@ export class ShopComponent implements OnInit {
     if(this.searchTerm)
       this.searchTerm.nativeElement.value="";   
       this.shopParams = new ShopParams();
+      this.shopService.setShopParams(this.shopParams);
       this.getProducts();
   }
 
