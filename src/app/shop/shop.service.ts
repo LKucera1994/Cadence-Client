@@ -84,7 +84,6 @@ export class ShopService {
   }
 
   getProduct(id: number){
-
     const product = [...this.productCache.values()]
     .reduce((accumulator,paginatedResult)=> {
       return {...accumulator,...paginatedResult.data.find(x => x.id === id)}
@@ -95,5 +94,4 @@ export class ShopService {
 
     return this.httpClient.get<Product>(this.baseUrl +"Products/" + id)
   }
-
 }

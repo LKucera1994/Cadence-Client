@@ -1,6 +1,5 @@
 import { AppUser } from "./user";
 
-
 export interface OrderToCreate{
     basketId: string;
     deliveryMethodId: number;
@@ -25,5 +24,4 @@ export interface Order{
     orderItems: OrderItem[];
     subtotal: number;   
     status:string;
-
 }

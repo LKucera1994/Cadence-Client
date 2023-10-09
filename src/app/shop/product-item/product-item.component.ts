@@ -14,16 +14,13 @@ export class ProductItemComponent implements OnInit {
   constructor(private basketService: BasketService) { }
 
   addItemToBasket(){
-
+    
     if(this.product)
     {
       this.basketService.addItemToBasket(this.product);
-    }
-    
-    
+    }     
   }
 
   ngOnInit(): void {
   }
-
 }

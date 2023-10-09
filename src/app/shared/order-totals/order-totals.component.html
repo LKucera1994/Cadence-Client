@@ -3,9 +3,7 @@
 </div>
 
 <div class="p-4">
-    <p class="fst-italic mb-4">
-
-    </p>
+    <p class="fst-italic mb-4"></p>
 
     <ul class="list-unstyled mb-4" *ngIf="(basketService.basketTotalSource$ | async) as totals">
         <li class="d-flex justify-content-between py-3 border-bottom">
@@ -21,5 +19,4 @@
             <strong class="test-muted">{{totals.total | currency}}</strong>
         </li>
     </ul>
-
 </div>

@@ -10,6 +10,4 @@ export class SectionHeaderComponent{
 
   constructor(public breadcrumbService: BreadcrumbService) {}
 
-  
-
 }

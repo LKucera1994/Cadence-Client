@@ -17,9 +17,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,9 +31,8 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     ToastrModule.forRoot(),
     AppRoutingModule,
     NgxSpinnerModule,
-    
     HomeModule,
-         FontAwesomeModule    
+    FontAwesomeModule    
   ],
   
   providers: [

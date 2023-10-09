@@ -6,8 +6,7 @@ export interface Basket {
     clientSecret?: string;
     paymentIntentId?: string;
     deliveryMethodId?: number;
-    shippingPrice: number;
-    
+    shippingPrice: number; 
   }
   
   export interface BasketItem {
@@ -17,19 +16,16 @@ export interface Basket {
     quantity: number;
     photoUrl: string;
     brand: string;
-    type: string;
-    
+    type: string;  
   }
 
   export class Basket implements Basket{
     id = cuid();
     items: BasketItem[]=[];
     shippingPrice: number =0;
-
   }
 
-  export interface BasketTotals
-  {
+  export interface BasketTotals{
     shippingCost:number;
     subtotal:number;
     total:number;

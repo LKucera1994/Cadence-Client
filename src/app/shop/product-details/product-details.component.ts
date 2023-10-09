@@ -49,12 +49,9 @@ export class ProductDetailsComponent implements OnInit {
             }
           })
         },
-        error: error=> console.log(error)
-        
-
+        error: error=> console.log(error)    
       })
-    }
-      
+    }    
   }
 
   incrementQuantity(){
@@ -72,15 +69,12 @@ export class ProductDetailsComponent implements OnInit {
       if(this.quantity > this.quantityInBasket){
         const itemsToAdd = this.quantity - this.quantityInBasket;
         this.quantityInBasket += itemsToAdd;
-
         this.basketService.addItemToBasket(this.product, itemsToAdd);
-
       }
       else{
         const itemsToRemove = this.quantityInBasket - this.quantity;
         this.quantityInBasket -= itemsToRemove;
         this.basketService.removeItemFromBasket(this.product.id, itemsToRemove);
-
        }
     }
   }
@@ -88,6 +82,4 @@ export class ProductDetailsComponent implements OnInit {
   get buttonText(){
     return this.quantityInBasket === 0 ? "Add to basket" : "Update basket";
   }
-
-
 }

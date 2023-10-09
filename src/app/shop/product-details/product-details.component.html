@@ -5,14 +5,11 @@
        <div class="col-6 item-photo">
             <img class="w-100" src="{{product.photoUrl}}"/>
         </div>
-        <div class="col-5 mt-5">
-            
+        <div class="col-5 mt-5">   
             <h3>{{product.name}}</h3>              
             <p style="font-size: 2em;" class="border-bottom">{{product.price | currency}}</p>
-
             <h5 class="text-primary mb-3" *ngIf="quantityInBasket > 0">
                 You have {{quantityInBasket}} of this item in your basket
-
             </h5>
 
             <div class="d-flex justify-content-start align-items-center">
@@ -31,8 +28,6 @@
                     (click)="updateBasket()"
                     [disabled]="quantity === quantityInBasket" 
                     class="btn btn-outline-primary ms-4 mb-1">{{buttonText}}</button>
-
-
             </div>
             <div class="row mt-4">
                 <h4>Description</h4>
@@ -40,19 +35,8 @@
                     <small>
                         {{product.description}}
                     </small>
-                </p>
-               
-            </div>     
-
-
-             
-            
-                           
-
-                                                   
+                </p>    
+            </div>                                         
         </div>   
-                              
-
-        
     </div>
 </div>

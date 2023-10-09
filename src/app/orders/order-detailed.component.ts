@@ -13,8 +13,6 @@ import { BreadcrumbService } from 'xng-breadcrumb';
 export class OrderDetailedComponent implements OnInit {
   order?: Order ;
   
-  
-
   constructor(private orderService: OrderService, private activatedRoute: ActivatedRoute,private breadcrumbService: BreadcrumbService) {
     this.breadcrumbService.set('@orderDetailed', " ");
    }
@@ -31,15 +29,8 @@ export class OrderDetailedComponent implements OnInit {
         next: result => {
           this.order = result;
           this.breadcrumbService.set('@orderDetailed', `Order# ${this.order.id} - ${this.order.status}`);
-          
-
         }
       });
-
-    }   
-
-    
-    
+    }    
   }
-
 }

@@ -13,5 +13,4 @@ export class OrderTotalsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

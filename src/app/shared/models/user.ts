@@ -5,13 +5,11 @@ export interface User{
 }
 
 export interface AppUser{
-   
     displayName?: string;
     firstName: string ;
     lastName: string ;
     street: string ;
     city: string ;
     state: string ;
-    zipcode: string ;
-    
+    zipcode: string ;    
 }

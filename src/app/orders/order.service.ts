@@ -17,6 +17,4 @@ export class OrderService {
   GetAllOrders(){
     return this.http.get<Order[]>(this.baseUrl + "orders");
   }
-
-
 }

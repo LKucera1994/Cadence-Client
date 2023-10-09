@@ -14,5 +14,4 @@ export class PaginHeaderComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

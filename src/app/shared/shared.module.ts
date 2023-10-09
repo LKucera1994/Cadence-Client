@@ -25,10 +25,7 @@ import { RouterModule } from '@angular/router';
     OrderTotalsComponent,
     TextInputComponent,
     StepperComponent,
-    BasketSummaryComponent
-    
-    
-    
+    BasketSummaryComponent 
   ],
   imports: [
 
@@ -40,10 +37,6 @@ import { RouterModule } from '@angular/router';
     BsDropdownModule.forRoot(),
     CdkStepperModule,
     RouterModule
-    
-    
-    
-
   ],
   exports: [
     PaginationModule,
@@ -57,8 +50,6 @@ import { RouterModule } from '@angular/router';
     StepperComponent,
     CdkStepperModule,
     BasketSummaryComponent
-    
-
   ]
 })
 export class SharedModule { }

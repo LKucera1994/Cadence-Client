@@ -12,14 +12,11 @@ import { AccountService } from './accout/account.service';
 export class AppComponent implements OnInit {
   title = 'Cadence';
   
-
   constructor(private basketService: BasketService, private accountService: AccountService){}
 
   ngOnInit(): void {
     this.loadBasket();
-    this.loadCurrentUser();
-    
-    
+    this.loadCurrentUser(); 
 }
 
 loadCurrentUser(){
@@ -33,7 +30,6 @@ loadBasket(){
     const basketId = localStorage.getItem("basket_id");
     if(basketId)
         this.basketService.getBasket(basketId);
-
 }
 }
 

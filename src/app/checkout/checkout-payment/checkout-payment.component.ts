@@ -34,6 +34,7 @@ export class CheckoutPaymentComponent implements OnInit{
 
   constructor(private basketService: BasketService, private checkoutService: CheckoutService,
      private toastr:ToastrService, private router: Router){}
+  
   ngOnInit(): void {
     loadStripe('pk_test_51MVFBoDV6TZE4jRsdjDdt5DUULATwF3rQnIhFYMSQ86o9ltuBvIlA9GFwPhMcpeaG2ScaxhFUxKBAp82TnYJUq6200KJFYN2rM').then(stripe =>{
       this.stripe =stripe;
@@ -55,7 +56,6 @@ export class CheckoutPaymentComponent implements OnInit{
           this.cardExpiryComplete = event.complete;
           if(event.error) this.cardErrors = event.error.message;
           else this.cardErrors = null
-
         })
 
         this.cardCvc = elements.create('cardCvc');
@@ -89,18 +89,19 @@ export class CheckoutPaymentComponent implements OnInit{
         this.basketService.deleteBasket(basket);
         const navigationExtras: NavigationExtras = {state: createdOrder};
         this.router.navigate(['checkout/success'], navigationExtras);
-
       }
 
       else{
         this.toastr.error(paymentResult.error.message);
       }
-      
-    } catch (error: any) {
+    }
+    catch (error: any) {
 
       console.log(error);
       this.toastr.error(error.message);    
-    } finally {
+    }
+    
+    finally {
       this.loading = false;
     }
   }
@@ -127,7 +128,6 @@ export class CheckoutPaymentComponent implements OnInit{
       throw new Error("Basket is null");
 
     const orderToCreate = this.getOrderToCreate(basket);
-
     return firstValueFrom(this.checkoutService.createOrder(orderToCreate)) 
   }
 

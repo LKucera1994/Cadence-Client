@@ -38,8 +38,7 @@ export class CheckoutComponent implements OnInit{
       nameOnCard: ['', Validators.required]
     })
   })
-
-
+  
   getAddressFormValues(){
     this.accountService.getAppUser().subscribe({
       next:address => {

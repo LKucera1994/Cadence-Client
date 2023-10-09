@@ -10,7 +10,7 @@
                 </cdk-step>
                 <cdk-step [label]="'Review'" >
                     <app-checkout-review [appStepper]="appStepper"></app-checkout-review>
-
+                    
                 </cdk-step>
                 <cdk-step [label]="'Payment'" [completed]="checkoutForm.get('paymentForm')?.valid">
                     <app-checkout-payment [checkoutForm]="checkoutForm" ></app-checkout-payment>
@@ -18,8 +18,6 @@
 
             </app-stepper>
         </div>
-
-
 
         <div class="col-4">
             <app-order-totals></app-order-totals>

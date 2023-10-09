@@ -104,7 +104,6 @@ export class ShopComponent implements OnInit {
     this.shopService.setShopParams(params);
     this.shopParams = params;
     this.getProducts();
-
   }
   onReset(){
     if(this.searchTerm)
@@ -113,9 +112,4 @@ export class ShopComponent implements OnInit {
       this.shopService.setShopParams(this.shopParams);
       this.getProducts();
   }
-
-
-
-
-
 }

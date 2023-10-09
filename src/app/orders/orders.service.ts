@@ -7,10 +7,5 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class OrdersService {
-  
-
   constructor(private http: HttpClient) { }
-
-  
-
 }

@@ -15,17 +15,13 @@ export class OrdersComponent implements OnInit {
     this.GetOrders();
   }
 
-  
   GetOrders() {
-
     this.orderService.GetAllOrders().subscribe({
       next:  response =>{
         this.orders = response;
       }
-    })
-    
+    })  
   }
-
 }
 
 

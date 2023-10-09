@@ -6,9 +6,7 @@ import { OrderDetailedComponent } from './order-detailed.component';
 
 const routes :Routes=[
   {path:"",component:OrdersComponent},
-  {path:":id", component:OrderDetailedComponent, data:{breadcrumb: {alias: "orderDetailed"}}}
-
-]
+  {path:":id", component:OrderDetailedComponent, data:{breadcrumb: {alias: "orderDetailed"}}}]
 
 @NgModule({
   declarations: [],
@@ -19,6 +17,5 @@ const routes :Routes=[
   exports:[
     RouterModule
   ]
-
 })
 export class OrderRoutingModule { }

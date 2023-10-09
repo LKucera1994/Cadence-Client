@@ -12,12 +12,9 @@
                 <strong>{{method.shortName}} - {{method.price |currency}}</strong>
                 <br>
                 <span class="label-description">{{method.description}}</span>
-
             </label>
         </div>
-
     </div>
-
 </div>
 
 <hr class="mt-0">
@@ -28,6 +25,5 @@
     </button>
     <button [disabled]="checkoutForm?.get('deliveryForm')?.invalid" class="btn btn-primary" cdkStepperNext>
         Go to Review <i class="fa fa-angle-right"></i>
-
     </button>
 </div>
