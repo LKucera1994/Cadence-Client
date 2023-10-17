@@ -26,11 +26,11 @@
         transition: all 0.5s;     
     }
 
-    & button:first-of-type{
+    &button:first-of-type{
         transform: translate(-60px,0);
     }
 
-    & button:last-of-type{
+    &button:last-of-type{
         transform: translate(59px,0) ;
     }
 }
