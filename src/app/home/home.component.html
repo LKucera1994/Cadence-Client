@@ -1,19 +1,38 @@
-<carousel [isAnimated]="true">
-    <slide>
-        <img src="assets/images/carousel1.jpg" alt="slide1" style="display: block; width: 100%;">
-    </slide>
-    <slide>
-        <img src="assets/images/carousel2.jpg" alt="slide2" style="display: block; width: 100%;">
-    </slide>
-    <slide>
-        <img src="assets/images/carousel3.jpg" alt="slide3" style="display: block; width: 100%;">
-    </slide>
 
-</carousel>  
+<div class="row">
+    <section class="col-8">
+        <carousel [isAnimated]="true">
+                <slide>
+                    <img src="assets/images/carousel1.jpg" alt="slide1" style="display: block; width: 100%;">
+                </slide>
+                <slide>
+                    <img src="assets/images/carousel2.jpg" alt="slide2" style="display: block; width: 100%;">
+                </slide>
+                <slide>
+                    <img src="assets/images/carousel3.jpg" alt="slide3" style="display: block; width: 100%;">
+                </slide>
+            </carousel>  
+        </section>
 
-<section class="featured">
-    <div class="d-flex justify-content-center pt-4" >
-        <h1>WELCOME!</h1>
+        <section class="col-3 my-3 mt-5">      
+            <section class="featured">
+                <div class="d-flex justify-content-center pt-2" >
+                    <h1>A place for all your shopping needs </h1>            
+                </div> 
+                <section class="button-style">
+                    <div >
+                        <div class="row mt-4">
+                            <div class=" center-col text-center">
+                                <a class="highlight-button btn btn-large button xs-margin-bottom-five" routerLink="/shop"  data-abc="true">
+                                    <i class="fa fa-shop"></i>Continue to shop
+                                </a>                               
+                            </div> 
+                        </div> 
+                    </div>
+                </section>          
+            </section>
+        </section>
     </div>
 
-</section>
+
+

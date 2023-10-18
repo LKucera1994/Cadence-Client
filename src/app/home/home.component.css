@@ -7,3 +7,64 @@ img{
     height: 750px;
     width: 100%;
 }
+
+body{
+    background:#eee;
+}
+.container {
+    margin-top: 200px
+}
+
+.btn {
+    display: inline-block;
+    margin-right: 20px;
+    letter-spacing: 2px;
+    border: 1px solid transparent
+}
+
+.btn-round {
+    border-radius: 4px 
+}
+
+.btn i {
+    margin-right: 5px
+}
+
+.btn.btn-large i {
+    font-size: 24px
+}
+
+.button {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.btn.btn-large {
+    font-size: 24px;
+    padding: 12px 25px
+}
+
+
+
+.highlight-button {
+    border: 2px solid rgb(47, 164, 231);
+    display: inline-block;
+    padding: 6px 16px 8px;
+    font-size: 16px;
+    color: rgb(47, 164, 231);
+    background-color: transparent
+}
+
+.highlight-button:hover {
+    background-color: rgb(47, 164, 231);
+    border: 2px solid rgb(47, 164, 231);
+    color: #fff
+}
+
+.highlight-button i {
+    color: rgb(47, 164, 231)
+}
+
+.highlight-button:hover i {
+    color: #fff
+}
