@@ -29,7 +29,7 @@ export class ShopService {
     // return cached item if we use the cache
     if(this.productCache.size >0 && useCache){
       if(this.productCache.has(Object.values(this.shopParams).join('-'))){
-        this.pagination = this. productCache.get(Object.values(this.shopParams).join('-'));
+        this.pagination = this.productCache.get(Object.values(this.shopParams).join('-'));
 
         if(this.pagination)
           return of(this.pagination);
